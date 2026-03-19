@@ -1,0 +1,7 @@
+FROM debian:latest
+
+RUN apt update -y && apt install -y apache2
+
+COPY apache2.conf /etc/apache2/apache2.conf
+Copy index.html /var/www/html/index.html
+CMD ["apache2", "-DFOREGROUND"]
